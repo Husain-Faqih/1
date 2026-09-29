@@ -65,7 +65,7 @@ function About() {
               <a href="/cv.pdf" download className="btn-cv">
                 <Download size={18} /> Download CV
               </a>
-              <a href="#projects" className="btn-projects">
+              <a href="#portofolio" className="btn-projects">
                 <Code2 size={18} /> View Projects
               </a>
             </div>
