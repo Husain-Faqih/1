@@ -1,0 +1,17 @@
+.footer {
+  padding: 30px 7%;
+  border-top: 1px solid rgba(167, 139, 250, 0.1);
+  background: rgba(7, 7, 17, 0.95);
+  text-align: center;
+}
+
+.footer-container p {
+  color: var(--text-muted, #64748b);
+  font-size: 0.85rem;
+}
+
+.footer-subtext {
+  margin-top: 5px;
+  font-size: 0.75rem !important;
+  opacity: 0.7;
+}

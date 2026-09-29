@@ -1,0 +1,152 @@
+.skills {
+  position: relative;
+  padding: 120px 7%;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-header {
+  margin-bottom: 50px;
+}
+
+.skills-header .section-label {
+  margin-bottom: 18px;
+  color: var(--purple-light, #a78bfa);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.skills-header h2 {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.skills-header h2 span {
+  background: linear-gradient(
+    135deg,
+    var(--purple, #8b5cf6),
+    var(--purple-light, #a78bfa)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-description {
+  max-width: 580px;
+  margin-top: 18px;
+  color: var(--text-secondary, #94a3b8);
+  font-size: 0.95rem;
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+/* Base Card Style */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px 20px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 20px;
+  background: rgba(17, 17, 38, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Box Pembungkus Icon */
+.skill-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  background: rgba(139, 92, 246, 0.05);
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Icon Style Base */
+.skill-icon {
+  font-size: 1.8rem;
+  color: var(--purple-light, #a78bfa);
+  transition: transform 0.3s ease;
+}
+
+.skill-card h3 {
+  color: var(--text-primary, #ffffff);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ========================================
+   HOVER EFFECTS (SUPPORT SOLID & GRADIENT)
+======================================== */
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  background: rgba(17, 17, 38, 0.8);
+  box-shadow: 0 10px 30px -10px var(--brand-color);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+  border-color: var(--brand-color);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Trik agar gradasi dan warna solid dapat bekerja sekaligus pada Icon React Icons */
+.skill-card:hover .skill-icon {
+  color: var(--brand-color); /* Berubah ke warna asli */
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px var(--brand-color)); /* Efek pendar warna asli */
+}
+
+/* Border dinamis saat hover */
+.skill-card:hover,
+.skill-card:hover .skill-icon-wrapper {
+  border-image: var(--brand-color) 1;
+  /* Jika brand color berupa solid color, gunakan border-color fallback */
+  border-color: var(--brand-color);
+}
+
+/* ========================================
+   ANIMASI KHUSUS SKILL AI
+======================================== */
+
+@keyframes aiPulse {
+  0% {
+    box-shadow: 0 0 0px var(--brand-color);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--brand-color);
+  }
+  100% {
+    box-shadow: 0 0 0px var(--brand-color);
+  }
+}
+
+.skill-card.ai-skill .skill-icon-wrapper {
+  animation: aiPulse 2.5s infinite ease-in-out;
+}
