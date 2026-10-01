@@ -100,8 +100,8 @@ function Hero() {
             animate="visible"
             custom={0.5}
           >
-            {techStack.map((tech, index) => (
-              <span key={index} className="tech-badge">
+            {techStack.map((tech) => (
+              <span key={tech} className="tech-badge">
                 {tech}
               </span>
             ))}
@@ -114,7 +114,7 @@ function Hero() {
             animate="visible"
             custom={0.6}
           >
-            <a href="#portofolio" className="btn btn-primary">
+            <a href="#portfolio" className="btn btn-primary">
               View My Work
               <ArrowRight size={18} />
             </a>
@@ -134,7 +134,7 @@ function Hero() {
             <a
               href="https://github.com/Husain-Faqih"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <FaGithub size={20} />
@@ -143,8 +143,8 @@ function Hero() {
             <a
               href="https://x.com/ryukazekun776"
               target="_blank"
-              rel="noreferrer"
-              aria-label="XTwitter"
+              rel="noopener noreferrer"
+              aria-label="X Twitter"
             >
               <FaXTwitter size={20} />
             </a>
@@ -152,7 +152,7 @@ function Hero() {
             <a
               href="https://www.instagram.com/m.husain.f.4/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Instagram"
             >
               <FaInstagram size={20} />
@@ -163,7 +163,6 @@ function Hero() {
           </motion.div>
         </div>
 
-        {/* Konten Kanan: Masuk dari KANAN ke KIRI */}
         <motion.div
           className="hero-visual"
           variants={slideFromRight}
